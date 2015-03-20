@@ -8,7 +8,7 @@
     
       <item>
         <title>Extracting Malware from Malicious Word Document</title>
-        <description>&lt;p&gt;We recieved today an obvious phishing email with a Word document attachement. 
+        <description>&lt;p&gt;We received today an obvious phishing email with a Word document attachement. 
 It contained a new malware XML dropper we have been seeing recently. 
 A quick search on Google returned an analysis by 
 &lt;a href=&quot;https://techhelplist.com/index.php/spam-list/751-aspiring-solicitors-debt-collection-malware&quot;&gt;techhelplist.com&lt;/a&gt;.
