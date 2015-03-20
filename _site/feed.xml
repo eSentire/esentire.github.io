@@ -6,5 +6,37 @@
     <link>https://esentire.github.io</link>
     <atom:link href="https://esentire.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
+      <item>
+        <title>Extracting Malware from Malicious Word Document</title>
+        <description>&lt;p&gt;We recieved today an obvious phishing email with a Word document attachement. 
+It contained a new malware XML dropper we have been seeing recently. 
+A quick search on Google returned an analysis by 
+&lt;a href=&quot;https://techhelplist.com/index.php/spam-list/751-aspiring-solicitors-debt-collection-malware&quot;&gt;techhelplist.com&lt;/a&gt;.
+However, they did not show how to decode the payload. Below is a short video how to do it:&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;https://www.youtube.com/embed/g-QOJxAyaQI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;Cymon reports for IP addresses found during the analysis:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/176.31.28.244&quot;&gt;cymon.io/176.31.28.244&lt;/a&gt; (1 event)&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/193.26.217.199&quot;&gt;cymon.io/193.26.217.199&lt;/a&gt; (2 events)&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/95.163.121.33&quot;&gt;cymon.io/95.163.121.33&lt;/a&gt; (2 events)&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/91.226.93.51&quot;&gt;cymon.io/91.226.93.51&lt;/a&gt; (3 events)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Related analyses:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;https://malwr.com/analysis/ZjQ1MDdhMjYxN2I4NDE1MTgzMWZjZDFhODY1MTQ1NmU/&quot;&gt;malwr.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;https://www.virustotal.com/en/file/71cf9e03d0a7cde196ac85a1b9c3936bb50b91234af5c044501f30771a3db67b/analysis/&quot;&gt;virustotal.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 19 Mar 2015 00:00:00 -0400</pubDate>
+        <link>https://esentire.github.io/2015-03-19-extracting-malware-from-malicious-word-document</link>
+        <guid isPermaLink="true">https://esentire.github.io/2015-03-19-extracting-malware-from-malicious-word-document</guid>
+      </item>
+    
   </channel>
 </rss>
