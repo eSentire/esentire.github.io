@@ -7,6 +7,65 @@
     <atom:link href="https://esentire.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Tracking FastFlux Networks</title>
+        <description>&lt;p&gt;During an investigation, two weeks ago, we discovered a malware sample that used a new malicious domain: &lt;i&gt;auth-update.ru&lt;/i&gt;. The domain pointed to multiple suspicious, rotating IP&amp;#39;s.&lt;/p&gt;
+
+&lt;p&gt;We are still tracking this large fastflux network and keep finding more domains associated with it. Some of these domains include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/domain/auth-update.ru&quot;&gt;auth-update.ru&lt;/a&gt; (down)&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/domain/smartfoodsglutenfree.kz&quot;&gt;smartfoodsglutenfree.kz&lt;/a&gt; (down)&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/domain/emptyarray.ru&quot;&gt;emptyarray.ru&lt;/a&gt; (live)&lt;/li&gt;
+&lt;li&gt;  dorttlokolrt.com (live)&lt;/li&gt;
+&lt;li&gt;  downs1.ru (live) new!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each domain has been observed serving multiple types of Malware and CnC servers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  Zeus/Kazy&lt;/li&gt;
+&lt;li&gt;  CryptoWall 3&lt;/li&gt;
+&lt;li&gt;  FAREIT Spyware&lt;/li&gt;
+&lt;li&gt;  Dyre + Dridex&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We have obtained thousands of IP address from this network, mostly from Ukraine &amp;amp; Russia. Running &lt;i&gt;dig&lt;/i&gt; this morning revealed more addresses:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; date
+Thu &lt;span class=&quot;m&quot;&gt;26&lt;/span&gt; Mar &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 09:55:50 EDT
+&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; dig downs1.ru +short
+195.66.220.205
+178.150.135.236
+109.108.252.93
+88.156.84.155
+24.10.15.65
+109.229.23.49
+108.46.145.13
+109.254.116.68
+46.98.108.44
+178.151.127.68
+94.45.140.60
+109.251.158.130
+176.8.193.164
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here are some IP reports on Cymon:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/24.10.15.65&quot;&gt;cymon.io/24.10.15.65&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/67.183.123.151&quot;&gt;cymon.io/67.183.123.151&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/92.49.229.45&quot;&gt;cymon.io/92.49.229.45&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;http://cymon.io/46.33.226.242&quot;&gt;cymon.io/46.33.226.242&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below is a simple script that you can use for tracking and scraping IP addresses that are part of the FastFlux domain: &lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/0xF1/efcbb51b270e283e20ae.js&quot; style=&quot;height:300px;&quot;&gt;&lt;/script&gt;
+</description>
+        <pubDate>Thu, 26 Mar 2015 00:00:00 -0400</pubDate>
+        <link>https://esentire.github.io/2015-03-26-tracking-fastflux-networks</link>
+        <guid isPermaLink="true">https://esentire.github.io/2015-03-26-tracking-fastflux-networks</guid>
+      </item>
+    
+      <item>
         <title>Extracting Malware from Malicious Word Document</title>
         <description>&lt;p&gt;We received today an obvious phishing email with a Word document attachment. 
 It contained a new malware XML dropper we have been seeing recently. 
