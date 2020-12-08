@@ -12,15 +12,19 @@ community driven approach to solving problems in a transparent way can lead to f
 and secure solutions.
 
 ## Quantum Safe Password Manager
-The quantum safe password manager (qspm) is a demonstration webapp that shows how to build a
-simple password management system using symmetric key encryption algorithms that
-are safe from currently known quantum attacks.
+The quantum safe password manager (qspm) is a single page application (SPA) demonstration
+webapp that shows how to build a simple password management system using symmetric key encryption
+algorithms that are safe from currently known quantum attacks.
 
-One of the interesting features of this project is the use of Rust to implement the
-algorithms that are then converted to the WebAssembly.
+One of the interesting features of this project is the use of the Rust programming language
+to implement the algorithms that are then converted to the WebAssembly for higher performance
+encryption/decryption operations.
 
-Another interesting feature is the use of the Github Workflow Actions service to test
-both the Rust code and the web interface.
+Another interesting feature is the ability to choose between different algorithms.
+
+Yet another interesting feature is the use of the Github Workflow Actions service to
+test both the Rust code and the web interface using a headless chrome browser and
+[pyleniumio](https://github.com/ElSnoMan/pyleniumio).
 
 * The webapp is available [here](https://esentire.github.io/qspm/).
 * The project is available [here](https://github.com/eSentire/qspm).
