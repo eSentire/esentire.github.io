@@ -14,7 +14,7 @@ eSentire strives to be an active participant in the open source community becaus
 community driven approach to solving problems in a transparent way can lead to faster, cost effective, reliable
 and secure solutions.
 
-# qspam
+# qspm
 The quantum safe password manager is a demonstration webapp that shows how to build a
 simple password management system using symmetric key encryption algorithms that
 are safe from currently known quantum attacks.
