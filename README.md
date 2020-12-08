@@ -11,14 +11,15 @@ community driven approach to solving problems in a transparent way can lead to f
 reliable and secure solutions to interesting problems.
 
 ## Grafana Prototyping Environment
-The Grafana prototyping environment (grape) is a repository contains a tool named grape that allows you to
-create a local Grafana visualization model prototype using Docker containers, save an existing model and
-load a saved environment without having to install any Grafana or database specific software.
+The Grafana prototyping environment is a repository that provides a tool named `grape` that
+enables you to easily create Grafana visualizations using Docker containers to create a Grafana server and
+a PostgreSQL database on your laptop that can be saved and used in other environments without having
+to install any Grafana or database specific software.
 
 * The project is available [here](https://github.com/eSentire/grape).
 
 ## Quantum Safe Password Manager
-The quantum safe password manager (qspm) is a single page application (SPA) demonstration
+The quantum safe password manager (`qspm`) is a single page application (SPA) demonstration
 webapp that shows how to build a simple password management system using symmetric key encryption
 algorithms that are safe from currently known quantum attacks.
 
