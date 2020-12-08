@@ -2,12 +2,20 @@
 ## Table of Contents
 
 1. [Overview](#overview)
+1. [Grafana Prototyping Enviromment (grape)](#grafana-prototyping-environment)
 1. [Quantum Safe Password Manager (qspm)](#quantum-safe-password-manager)
 
 ## Overview
 eSentire strives to be an active participant in the open source community because we feel that this global,
 community driven approach to solving problems in a transparent way can lead to faster, cost effective, reliable
 and secure solutions.
+
+## Grafana Prototyping Environment
+The Grafana prototyping environment (grape) is a repository contains a tool named grape that allows you to
+create a local Grafana visualization model prototype using Docker containers, save an existing model and
+load a saved environment without having to install any Grafana or database specific software.
+
+* The project is available [here](https://github.com/eSentire/grape).
 
 ## Quantum Safe Password Manager
 The quantum safe password manager (qspm) is a single page application (SPA) demonstration
