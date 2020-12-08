@@ -1,14 +1,10 @@
 # esentire.github.io
 Collection of Open Source projects from eSentire
 
-<details><summary>Table of Contents</summary>
-
 # Table of Contents
 
 1. [Overview](#overview)
 1. [Quantum Safe Password Manager](#qspm)
-
-</details>
 
 # Overview
 eSentire strives to be an active participant in the open source community because we feel that this global,
