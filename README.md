@@ -23,9 +23,9 @@ The quantum safe password manager (`qspm`) is a single page application (SPA) de
 webapp that shows how to build a simple password management system using symmetric key encryption
 algorithms that are safe from currently known quantum attacks.
 
-One of the interesting features of this project is the use of the Rust programming language
-to implement the algorithms that are then converted to the WebAssembly for higher performance
-encryption/decryption operations.
+One of the interesting features of this project is the use of the Rust programming language to
+implement the algorithms that are then converted to WebAssembly for higher performance, 
+secure encryption/decryption operations in the browser.
 
 Another interesting feature is the ability to choose between different algorithms.
 
