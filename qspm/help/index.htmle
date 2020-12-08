@@ -1,0 +1,208 @@
+<h1 id="quantum-safe-password-manager-qspm">Quantum Safe Password Manager (qspm)</h1>
+<p>This single page demonstration web app provides services that enable you to maintain sensitive data like passwords securely in your browser and save the results in an encrypted remote <a href="https://www.dropbox.com/?landing=dbv2">DropBox</a> file or, by cutting and pasting the encrypted data into a text editor and saving it in a local file.</p>
+<p>The flow looks like this:</p>
+<figure>
+<img src="img/qspm.png" alt="qspm-flow" /><figcaption aria-hidden="true">qspm-flow</figcaption>
+</figure>
+<p>The key feature of this system is that data is encrypted and decrypted locally in your browser sandbox using a Rust based <em>wasm</em> (<a href="https://webassembly.org/">WebAssembly</a>) module that implements the AES256-GCM encryption algorithm. That is a symmetric key algorithm that is judged to be quantum safe and is quite fast because it is implemented in wasm.</p>
+<p>What this means is that your data data is <em>never</em> transported in unencrypted form <em>anywhere</em>.</p>
+<blockquote>
+<p>Contrast this approach with other services. Those services might transfer your unencrypted data to their server using TLS which is quite secure today but, in the future, may vulnerable to quantum attacks.</p>
+</blockquote>
+<p>Furthermore, this system is open source so you can analyze the source code to find and fix security vulnerabilities.</p>
+<blockquote>
+<p>There are other services that provide sensitive data management services but some of them are not open source so it is difficult to determine how vulnerable they are to quantum and traditional attacks.</p>
+</blockquote>
+<p>And finally, you have complete control over your encrypted data. You can store it DropBox, a local file or wherever else you want.</p>
+<blockquote>
+<p>It is often the case that other services manage the data for the user which is perfectly fine but it is sometimes difficult to determine how well that service is protecting the data.</p>
+</blockquote>
+<h2 id="using">Using</h2>
+<p>This webapp is available directly from <a href="https://esentire.github.io/qspm">https://esentire.github.io/qspm</a>.</p>
+<h2 id="installing">Installing</h2>
+<p>This single page web app can be installed without building anything. Simply download the <code>qspm.zip</code> file from the release page and extract to the location where it will be served.</p>
+<h2 id="building">Building</h2>
+<p>To build this project from source you must have the following packages installed:</p>
+<ol type="1">
+<li>Rust,</li>
+<li>python-3.8 or later,</li>
+<li>GNU make,</li>
+<li>zip,</li>
+<li><a href="https://pandoc.org/">pandoc</a> and</li>
+<li>c development tools installed.</li>
+</ol>
+<p>The steps are:</p>
+<ol type="1">
+<li>clone out the project</li>
+<li>cd to the project</li>
+<li>type <code>make serve</code></li>
+<li>navigate to http://localhost:8005 to start using the system</li>
+</ol>
+<p>Here is an example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>$ <span class="fu">git</span> clone https://github.com/eSentire/qspm.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>$ <span class="bu">cd</span> qspm</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>$ <span class="fu">make</span> serve</span></code></pre></div>
+<p>In about 10 minutes you will be able to navigate to the app at http://localhost:8005 where you will see something that looks like this.</p>
+<figure>
+<img src="img/ss01-raw-init.png" alt="ss01-raw-init" /><figcaption aria-hidden="true">ss01-raw-init</figcaption>
+</figure>
+<h2 id="usage">Usage</h2>
+<p>There are two ways to use this system: from an internet server or from a local server running on your host.</p>
+<p>If you are using an internet server, just navigate to the page and all is well.</p>
+<p>If you want to run this system locally, you must start the system by running <code>make serve</code> in the project directory. This starts a server running on port 8005. Just navigate to http://localhost:8005 to start using it.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>The first thing that you will want to do is create some data. One convenient way to do that is to navigate to the <code>Raw</code> tab, chose a master password and hit the Example button to generate some initial data.</p>
+<p>There are four different options for doing uploads and downloads.</p>
+<ol type="1">
+<li>DropBox - allows you to upload and download files.</li>
+<li>File - allows you to download a file from the local file system.</li>
+<li>None - no upload or download, all work is in the broweser.</li>
+<li>URL - allows you to download content from a URL.</li>
+</ol>
+<p>If you have a DropBox account, get a temporary token, encrypt the initial data and upload it to a file named something like <code>data.txt</code> so that you have a record of it.</p>
+<p>Here is what the screen looks like after clicking the <q>Example</q> button and typing the password (<q>test</q>).</p>
+<figure>
+<img src="img/ss02-raw-example.png" alt="ss02-raw-example" /><figcaption aria-hidden="true">ss02-raw-example</figcaption>
+</figure>
+<p>Here is what it looks like after you click the <q>Encrypt</q> button.</p>
+<figure>
+<img src="img/ss03-raw-encrypt.png" alt="ss03-raw-encrypt" /><figcaption aria-hidden="true">ss03-raw-encrypt</figcaption>
+</figure>
+<p>If you have a DropBox account, you can enter an access token and a file name (in this case <q>example.txt</q>) and upload your file by clicking the <q>Upload</q> button. Here is what it looks like:</p>
+<figure>
+<img src="img/ss09-dropbox-upload-setup.png" alt="ss09-dropbox-upload-setup" /><figcaption aria-hidden="true">ss09-dropbox-upload-setup</figcaption>
+</figure>
+<p>When the upload completes, you will get a notification of success. If it fails with a <code>409</code> error, you forgot to enter the file name.</p>
+<figure>
+<img src="img/ss10-dropbox-upload-success.png" alt="ss10-dropbox-upload-success" /><figcaption aria-hidden="true">ss10-dropbox-upload-success</figcaption>
+</figure>
+<p>Now you can click the <q>List Files</q> button and see it.</p>
+<figure>
+<img src="img/ss11-dropbox-list.png" alt="ss11-dropbox-list" /><figcaption aria-hidden="true">ss11-dropbox-list</figcaption>
+</figure>
+<p>You can remove the list by typing the <q>Clear List</q> button.</p>
+<blockquote>
+<p>NOTE: you cannot delete files from this interface, you must go to your DropBox account to do that.</p>
+</blockquote>
+<p>Once you have the hang of creating the data and doing uploads, go to the records tab and choose records to edit.</p>
+<p>There is another option available for downloading local files: <q>Download Local File</q>. This allows you to download files that were saved locally.</p>
+<h2 id="viewing-records">Viewing Records</h2>
+<p>Records are viewed in <code>Records</code> tab. There is a powerful search/filter feature that you can use to prune what you. If you are using the example, try typing <q>google</q> in the search box to see how it works.</p>
+<p>By default all fields that have a <q>pass</q> prefix are hidden. To make them visible, click the <q>Show</q> button.</p>
+<p>Here is what the records look like if you used the example setup.</p>
+<figure>
+<img src="img/ss04-records.png" alt="ss04-records" /><figcaption aria-hidden="true">ss04-records</figcaption>
+</figure>
+<p>Here is what it looks like after typing <q>google</q> into the search bar.</p>
+<figure>
+<img src="img/ss05-one-rec.png" alt="ss05-one-rec" /><figcaption aria-hidden="true">ss05-one-rec</figcaption>
+</figure>
+<p>And, finally, this is what it looks like after you click the <q>Show</q> button.</p>
+<figure>
+<img src="img/ss06-one-rec-show.png" alt="ss06-one-rec-show" /><figcaption aria-hidden="true">ss06-one-rec-show</figcaption>
+</figure>
+<h2 id="adding-records">Adding Records</h2>
+<p>Records are added in the <code>Records</code> tab or in the <code>Add</code> tab. In the <code>Records</code>, simply click the <q>Add</q> button at the top.</p>
+<p>There is another tricky way to add records, navigate to the <code>Edit</code> tab, choose a record and change the id. This will create a new record and keep the old one.</p>
+<h2 id="deleting-records">Deleting Records</h2>
+<p>Records are deleted in the <code>Records</code> tab. Simply click that <q>Delete</q> button for the record you want to delete. It will pop up a confirmation dialogue to make sure that is what you really want to do.</p>
+<h2 id="editing-records">Editing Records</h2>
+<p>Records are edited in the <code>Records</code> tab or in the <code>Edit</code> tab. In the <code>Records</code>, simply click that <q>Edit</q> button for the record.</p>
+<p>If you go directly to the <q>Edit</q> tab, you will see all of the records as buttons labeled by their ids. Click on the one you want to edit. This is also a convenient way to get a summary view. Here is what it looks like for the example:</p>
+<figure>
+<img src="img/ss07-edit-all.png" alt="ss07-edit-all" /><figcaption aria-hidden="true">ss07-edit-all</figcaption>
+</figure>
+<p>And here is what it looks like after selecting the <q>Google…</q> button.</p>
+<figure>
+<img src="img/ss08-edit-one.png" alt="ss08-edit-one" /><figcaption aria-hidden="true">ss08-edit-one</figcaption>
+</figure>
+<h2 id="record-format">Record Format</h2>
+<p>The records are stored in JSON format.</p>
+<p>There are three sections in the JSON file: <q>meta</q>, <q>fields</q> and <q>records</q>.</p>
+<h3 id="meta">meta</h3>
+<p>The <q>meta</q> section contains meta data about the records, specifically:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>atime</td>
+<td>The last access time.</td>
+</tr>
+<tr class="even">
+<td>ctime</td>
+<td>The creation time.</td>
+</tr>
+<tr class="odd">
+<td>mtime</td>
+<td>The modification time.</td>
+</tr>
+<tr class="even">
+<td>version</td>
+<td>The schema version.</td>
+</tr>
+</tbody>
+</table>
+<p>All of the time fields are set automatically by the system.</p>
+<p>Here is an example:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="dt">&quot;meta&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="dt">&quot;atime&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="dt">&quot;ctime&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>        <span class="dt">&quot;mtime&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="fu">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="fields">fields</h3>
+<p>The <q>fields</q> section contains meta data about each field of a record. The fields are designated by their id. There are two types of fields meta data:</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>attrs</td>
+<td>CSS attributes for each field with the specified name . Normally things like: <code>{"style": "text-align:right"}</code>.</td>
+</tr>
+<tr class="even">
+<td>class</td>
+<td>CSS class name for each field with the specified name.</td>
+</tr>
+</tbody>
+</table>
+<p>Here is an example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="dt">&quot;fields&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>            <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="st">&quot;text-align:right;color:red;background-color:blue&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="fu">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="fu">}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<blockquote>
+<p>NOTE: do not use the above color scheme for real data!</p>
+</blockquote>
+<h3 id="records">records</h3>
+<p>The <q>records</q> section is a dictionary of records with field entries. The fields in each record <em>do not</em> have to be the same nor do the fields have to be defined in the <q>fields</q> section. If they are <em>not</em> defined in the fields section then default formatting is applied to them.</p>
+<p>Any record that starts with <q>http:</q> or <q>https:</q> is assumed to be linkable. All fields in the records report can be selected with a single click unless they are linkable by the previous definition.</p>
+<p>Any record that starts with <q>pass</q> is assumed to be some sort of password field and is hidden by default but you can change that by clicking the Show button.</p>
+<h2 id="future-work">Future Work</h2>
+<ol type="1">
+<li>Extend the service providers to include Google Drive and Microsoft OneDrive.</li>
+<li>Improve the look and feel.</li>
+<li>Make selection from the raw input dropbox file list easier. Perhaps they could be selectable inputs.</li>
+<li>Consider adding fields that are textarea boxes in addition to simple text fields.</li>
+</ol>
