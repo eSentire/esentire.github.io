@@ -1,17 +1,17 @@
 # esentire.github.io
 Collection of Open Source projects from eSentire
 
-# Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 1. [Quantum Safe Password Manager (qspm)](#quantum-safe-password-manager)
 
-# Overview
+## Overview
 eSentire strives to be an active participant in the open source community because we feel that this global,
 community driven approach to solving problems in a transparent way can lead to faster, cost effective, reliable
 and secure solutions.
 
-# Quantum Safe Password Manager
+## Quantum Safe Password Manager
 The quantum safe password manager (qspm) is a demonstration webapp that shows how to build a
 simple password management system using symmetric key encryption algorithms that
 are safe from currently known quantum attacks.
