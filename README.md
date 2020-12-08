@@ -6,9 +6,9 @@
 1. [Quantum Safe Password Manager (qspm)](#quantum-safe-password-manager)
 
 ## Overview
-eSentire strives to be an active participant in the open source community because we feel that this global,
-community driven approach to solving problems in a transparent way can lead to faster, cost effective, reliable
-and secure solutions.
+eSentire strives to be an active participant in the open source community because we feel that this global
+community driven approach to solving problems in a transparent way can lead to faster, more cost effective,
+reliable and secure solutions to interesting problems.
 
 ## Grafana Prototyping Environment
 The Grafana prototyping environment (grape) is a repository contains a tool named grape that allows you to
