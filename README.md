@@ -1,5 +1,3 @@
-# esentire.github.io
-Collection of Open Source projects from eSentire
 
 ## Table of Contents
 
