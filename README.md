@@ -6,7 +6,7 @@
 1. [Quantum Safe Password Manager (qspm)](#quantum-safe-password-manager)
 
 ## Overview
-eSentire strives to be an active participant in the open source community because we feel that this global
+eSentire strives to be an active participant in the open source community because we feel that the
 community driven approach to solving problems in a transparent way can lead to faster, more cost effective,
 reliable and secure solutions to interesting problems.
 
