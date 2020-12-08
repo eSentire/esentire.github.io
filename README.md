@@ -22,6 +22,5 @@ algorithms that are then converted to the WebAssembly.
 Another interesting feature is the use of the Github Workflow Actions service to test
 both the Rust code and the web interface.
 
-The webapp is available [here](https://esentire.github.io/qspm/).
-
-The project is available [here](https://github.com/eSentire/qspm).
+* The webapp is available [here](https://esentire.github.io/qspm/).
+* The project is available [here](https://github.com/eSentire/qspm).
