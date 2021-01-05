@@ -91,7 +91,8 @@
 <p>There is another option available for downloading local files: <q>Download Local File</q>. This allows you to download files that were saved locally.</p>
 <h2 id="viewing-records">Viewing Records</h2>
 <p>Records are viewed in <code>Records</code> tab. There is a powerful search/filter feature that you can use to prune what you. If you are using the example, try typing <q>google</q> in the search box to see how it works.</p>
-<p>By default all fields that have a <q>pass</q> prefix are hidden. To make them visible, click the <q>Show</q> button.</p>
+<p>By default all fields that have a case insensitive <q>pass</q> prefix are hidden. To make them visible, click the <q>Show</q> button.</p>
+<p>All fields that have a case insensitive <q>note</q> prefix are treated as <q>textarea</q> fields that allow you to conveniently store notes with multiple lines.</p>
 <p>Here is what the records look like if you used the example setup.</p>
 <figure>
 <img src="img/ss04-records.png" alt="ss04-records" /><figcaption aria-hidden="true">ss04-records</figcaption>
@@ -203,6 +204,4 @@
 <ol type="1">
 <li>Extend the service providers to include Google Drive and Microsoft OneDrive.</li>
 <li>Improve the look and feel.</li>
-<li>Make selection from the raw input dropbox file list easier. Perhaps they could be selectable inputs.</li>
-<li>Consider adding fields that are textarea boxes in addition to simple text fields.</li>
 </ol>
