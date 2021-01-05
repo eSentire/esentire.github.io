@@ -200,8 +200,75 @@
 <p>The <q>records</q> section is a dictionary of records with field entries. The fields in each record <em>do not</em> have to be the same nor do the fields have to be defined in the <q>fields</q> section. If they are <em>not</em> defined in the fields section then default formatting is applied to them.</p>
 <p>Any record that starts with <q>http:</q> or <q>https:</q> is assumed to be linkable. All fields in the records report can be selected with a single click unless they are linkable by the previous definition.</p>
 <p>Any record that starts with <q>pass</q> is assumed to be some sort of password field and is hidden by default but you can change that by clicking the Show button.</p>
+<h2 id="javascript-lint">Javascript Lint</h2>
+<p>This is how i lint the javascript code. There are a lot of possible tools for running the lint so i chose not to hard code a single approach.</p>
+<h3 id="installation">Installation</h3>
+<p>This is how i installed a linter.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>$ <span class="ex">npm</span> init</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>$ <span class="ex">npx</span> eslint --init</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="ex">.</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="ex">npx</span>: installed 113 in 9.348s</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>✔ <span class="ex">How</span> would you like to use ESLint? · problems</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>✔ <span class="ex">What</span> type of modules does your project use? · esm</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>✔ <span class="ex">Which</span> framework does your project use? · none</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>✔ <span class="ex">Does</span> your project use TypeScript? · No / Yes</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>✔ <span class="ex">Where</span> does your code run? · browser</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>✔ <span class="ex">What</span> format do you want your config file to be in? · JavaScript</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="ex">Local</span> ESLint installation not found.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="ex">The</span> config that you<span class="st">&#39;ve selected requires the following dependencies:</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="st">eslint@latest</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="st">✔ Would you like to install them now with npm? · No / Yes</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="st">Installing eslint@latest</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="st">npm notice created a lockfile as package-lock.json. You should commit this file.</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="st">+ eslint@7.17.0</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="st">added 113 packages from 65 contributors and audited 113 packages in 12.733s</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="st">13 packages are looking for funding</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="st">  run `npm fund` for details</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a><span class="st">found 0 vulnerabilities</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a><span class="st">Successfully created .eslintrc.js file in /Volumes/extra01/work/qspm</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a><span class="st">ESLint was installed locally. We recommend using this local copy instead of your globally-installed copy.</span></span></code></pre></div>
+<h3 id="linting">Linting</h3>
+<p>Here is how i run lint.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>$ <span class="ex">npx</span> eslint www/js</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="ex">/Volumes/extra01/work/qspm/www/js/add.js</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="ex">108</span>:10  warning  <span class="st">&#39;addAppendTableRowAction&#39;</span> is defined but never used  no-unused-vars</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  <span class="ex">149</span>:10  warning  <span class="st">&#39;addClearFields&#39;</span> is defined but never used           no-unused-vars</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>  <span class="ex">157</span>:10  warning  <span class="st">&#39;addSaveRecord&#39;</span> is defined but never used            no-unused-vars</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="ex">/Volumes/extra01/work/qspm/www/js/edit.js</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>  <span class="ex">220</span>:10  warning  <span class="st">&#39;editAppendTableRowAction&#39;</span> is defined but never used  no-unused-vars</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>  <span class="ex">273</span>:10  warning  <span class="st">&#39;editDeleteRow&#39;</span> is defined but never used             no-unused-vars</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>  <span class="ex">287</span>:10  warning  <span class="st">&#39;editSaveRecord&#39;</span> is defined but never used            no-unused-vars</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>  <span class="ex">349</span>:10  warning  <span class="st">&#39;editDeleteRecord&#39;</span> is defined but never used          no-unused-vars</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="ex">/Volumes/extra01/work/qspm/www/js/records.js</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a>  <span class="ex">259</span>:10  warning  <span class="st">&#39;clearRecordsSearch&#39;</span> is defined but never used      no-unused-vars</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>  <span class="ex">266</span>:10  warning  <span class="st">&#39;toggleRecordsPasswords&#39;</span> is defined but never used  no-unused-vars</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>  <span class="ex">342</span>:10  warning  <span class="st">&#39;deleteRecord&#39;</span> is defined but never used            no-unused-vars</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>  <span class="ex">358</span>:10  warning  <span class="st">&#39;addRecord&#39;</span> is defined but never used               no-unused-vars</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>  <span class="ex">372</span>:10  warning  <span class="st">&#39;editRecord&#39;</span> is defined but never used              no-unused-vars</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="ex">/Volumes/extra01/work/qspm/www/js/tabs.js</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>  <span class="ex">3</span>:10  warning  <span class="st">&#39;openTab&#39;</span> is defined but never used  no-unused-vars</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a><span class="ex">/Volumes/extra01/work/qspm/www/js/utils.js</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a>  <span class="ex">19</span>:10  warning  <span class="st">&#39;utilSetSessionKey&#39;</span> is defined but never used     no-unused-vars</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a>  <span class="ex">53</span>:10  warning  <span class="st">&#39;utilButtonClearValue&#39;</span> is defined but never used  no-unused-vars</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a>✖ <span class="ex">15</span> problems (0 errors, 15 warnings)</span></code></pre></div>
+<blockquote>
+<p>Note that the <q>never used</q> message is being applied to functions that i know are called from the HTML.</p>
+</blockquote>
 <h2 id="future-work">Future Work</h2>
 <ol type="1">
-<li>Extend the service providers to include Google Drive and Microsoft OneDrive.</li>
+<li>Extend the service providers to include Google Drive, Microsoft OneDrive and AWS S3.</li>
 <li>Improve the look and feel.</li>
 </ol>
